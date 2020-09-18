@@ -59,6 +59,7 @@ public class Tekoaly {
         }
         lauta.teeSiirto(0, parassiirto);
         System.out.println("Laskurin arvo: " + laskuri);
+        System.out.println(tbls[iterations].get(lauta.kopio()));
     }
 
     private int negaMax(boolean maximize, int alpha, int beta, int depth, int goalDepth) {
@@ -150,7 +151,7 @@ public class Tekoaly {
                 if (lauta.vapaa(i, j)) {
                     for (int k = 1; k <= 8; k++) {
                         lauta.teeSiirto(player, i,j,k);
-                        // Jos aiaksemmalla syvyydellä position arvo on jo saatu ratkaistua annetaan se siirron arvoksi
+                        // Jos aikaisemmalla syvyydellä position arvo on jo saatu ratkaistua annetaan se siirron arvoksi
                         if (tbls[depth].containsKey(lauta.kopio())) tulos.add(new Siirto(i,j,k,tbls[depth].get(lauta.kopio())));
                         else tulos.add(new Siirto(i,j,k,heuristiikka()));
                         peruSiirto(pelaajanLauta, botinLauta);

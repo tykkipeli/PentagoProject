@@ -116,8 +116,7 @@ public class GUI extends JFrame{
     }
     
     public void paint(Graphics g) {
-        g.setColor(Color.black);
-        g.drawOval(480,480, 200, 200);
+        
     }
     
 }
@@ -183,11 +182,25 @@ class MyPanel extends JPanel implements MouseListener{
         g2.draw(new Line2D.Float(koko-10, 7*koko/2, 6*koko+15, 7*koko/2));
         
         g.setFont(new Font("Serif", Font.BOLD, 30));
-        g.drawString(teksti, 100, 700);
+        g.drawString(teksti, 100, 710);
+        
+        g2.setStroke(new BasicStroke(7));
+        g.setColor(Color.red);
+        drawArrowDown(g, kaantox[0]-10, kaantoy[0]-30);
+        drawArrowRight(g, kaantox[1]-20, kaantoy[1]-10);
+        drawArrowLeft(g, kaantox[2]-45, kaantoy[2]-10);
+        drawArrowDown(g, kaantox[3]+10, kaantoy[3]-30);
+        drawArrowRight(g, kaantox[4]-25, kaantoy[4]+5);
+        drawArrowUp(g, kaantox[5]-10, kaantoy[5]-50);
+        drawArrowUp(g, kaantox[6]+10, kaantoy[6]-50);
+        drawArrowLeft(g, kaantox[7]-45, kaantoy[7]+5);
+        /*
         for (int i = 0; i < 8; i++) {
             g.setColor(Color.red);
-            g.fillOval(kaantox[i]-25, kaantoy[i]-25, 50, 50);
+            //g.fillOval(kaantox[i]-25, kaantoy[i]-25, 50, 50);
+            drawArrow(g, kaantox[i]-25, kaantoy[i]-25);
         }
+        */
         g.setColor(Color.black);
         for (int i = 1; i <= 6; i++) {
            for (int j = 1; j <= 6; j++) {
@@ -217,7 +230,7 @@ class MyPanel extends JPanel implements MouseListener{
             if (GUI.kaantovaihe) {
                 int kaanto = 0;
                 for (int i = 0; i < 8; i++) {
-                    if (Math.abs(y-kaantoy[i]) < 30 && Math.abs(x-kaantox[i]) < 30) {
+                    if (Math.abs(y-kaantoy[i]) < 50 && Math.abs(x-kaantox[i]) < 50) {
                         kaanto = i+1;
                     }
                 }
@@ -284,5 +297,41 @@ class MyPanel extends JPanel implements MouseListener{
 
     @Override
     public void mouseExited(MouseEvent arg0) {
+    }
+    
+    public void drawArrowRight(Graphics g, int x, int y) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(30));
+        g.drawLine(x, y, x+78, y);
+        g2.setStroke(new BasicStroke(10));
+        g.drawLine(x+70,y-30,x+100,y);
+        g.drawLine(x+70,y+30,x+100,y);
+    }
+    
+    public void drawArrowLeft(Graphics g, int x, int y) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(30));
+        g.drawLine(x+22, y, x+100, y);
+        g2.setStroke(new BasicStroke(10));
+        g.drawLine(x,y,x+30,y-30);
+        g.drawLine(x,y,x+30,y+30);
+    }
+    
+    public void drawArrowDown(Graphics g, int x, int y) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(30));
+        g.drawLine(x, y, x, y+78);
+        g2.setStroke(new BasicStroke(10));
+        g.drawLine(x-30,y+70,x,y+100);
+        g.drawLine(x+30,y+70,x,y+100);
+    }
+    
+    public void drawArrowUp(Graphics g, int x, int y) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(30));
+        g.drawLine(x, y+22, x, y+100);
+        g2.setStroke(new BasicStroke(10));
+        g.drawLine(x,y,x-30,y+30);
+        g.drawLine(x,y,x+30,y+30);
     }
 }

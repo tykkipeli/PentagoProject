@@ -18,12 +18,12 @@ public class Kayttoliittyma {
     }
     
     public void testaile() {
-        String kentta = "| | | |O|X|O|\n" +
-                        "| | |X|X| |O|\n" +
-                        "| |X| |O| |O|\n" +
-                        "| | |X|O|X| |\n" +
-                        "| | | |O| |X|\n" +
-                        "| | | | |X|O|";
+        String kentta = "| | | |X| | |\n" +
+                        "| | | | | | |\n" +
+                        "|X|X|X| | |X|\n" +
+                        "| |X|O|O|O|O|\n" +
+                        "| | | |O| | |\n" +
+                        "| |X| |O| | |";
         
        
         lauta = new Lauta(kentta);
