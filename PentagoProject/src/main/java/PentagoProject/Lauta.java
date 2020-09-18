@@ -13,7 +13,8 @@ public class Lauta {
     public Lauta() {
     }
 
-    Lauta(String kentta) {
+    // debuggailua varten konstruktori, jolle voi antaa tilanteen merkkijonona
+    public Lauta(String kentta) {
         String rivit[] = kentta.split("\n");
         for (int i = 0; i < 6; i++) {
             for (int j = 1; j <= 11; j+=2) {
@@ -86,6 +87,7 @@ public class Lauta {
         return ' ';
     }
 
+    // pelaaja p tekee siirron riville x sarakkeeseen y ja suorittaa käännön kaanto
     public void teeSiirto(int p, int x, int y, int kaanto) {
         long mask = laskeMask(x, y);
         bitboard[p] = mask | bitboard[p];
@@ -142,7 +144,7 @@ public class Lauta {
         return false;
     }
 
-    public void teeKaanto(int kaanto) {
+    private void teeKaanto(int kaanto) {
         if (kaanto == 1) {
             kaannaVasemmalle(2, 2);
         } else if (kaanto == 2) {

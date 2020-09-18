@@ -1,5 +1,7 @@
 package PentagoProject;
 
+//Tämä luokka on korvattu graafiella käyttöliittymällä
+
 import java.util.Scanner;
 
 public class Kayttoliittyma {
@@ -16,21 +18,13 @@ public class Kayttoliittyma {
     }
     
     public void testaile() {
-        String kentta = "|O| | | | | |\n" +
-                        "|X|X|X| |X| |\n" +
-                        "| | |O| | | |\n" +
-                        "|O|O|X| |O|O|\n" +
-                        "|X|O|X| |O|X|\n" +
-                        "| | |X| | |O|";
-
-        /*
-        kentta =        "| | | | | | |\n" +
-                        "| | | | | | |\n" +
-                        "| | | | | | |\n" +
-                        "| | | | | | |\n" +
-                        "| | | |X| | |\n" +
-                        "| | | |O| | |";
-        */
+        String kentta = "| | | |O|X|O|\n" +
+                        "| | |X|X| |O|\n" +
+                        "| |X| |O| |O|\n" +
+                        "| | |X|O|X| |\n" +
+                        "| | | |O| |X|\n" +
+                        "| | | | |X|O|";
+        
        
         lauta = new Lauta(kentta);
         //System.out.println(lauta.bitboard[0]);

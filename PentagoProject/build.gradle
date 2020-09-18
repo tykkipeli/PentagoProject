@@ -1,17 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'application'
+apply plugin: 'checkstyle'
 
 
-mainClassName = 'PentagoProject.Main'
+mainClassName = 'PentagoProject.Pentago'
 
-repositories {
-    jcenter()
-}
+sourceSets.main.java.srcDirs = ['src/main/java']
 
-dependencies {
-    testCompile 'junit:junit:4.12'
-}
+check.dependsOn jacocoTestReport
 
 jacocoTestReport {
     reports {
@@ -20,4 +17,30 @@ jacocoTestReport {
     }
 }
 
-check.dependsOn jacocoTestReport
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+
+}
+
+run {
+    standardInput = System.in
+}
+
+jacoco {
+  toolVersion = "0.8.2"
+}
+
+checkstyle {
+    toolVersion '7.8.1'
+    configFile = file("checkstyle.xml")
+}
+checkstyleMain {
+    source ='src/main/java'
+}
+checkstyleTest {
+    source ='src/test/java'
+}
