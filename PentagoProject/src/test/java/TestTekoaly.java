@@ -51,4 +51,18 @@ public class TestTekoaly {
         aly.teeSiirto(lauta);
         assertTrue(lauta.loytyyViidenSuora(0));
     }
+    
+    @Test
+    public void tekeeTasapeliSiirronJosSeOnParasMitaLoytyy() {
+        Lauta lauta = new Lauta(        "|O|O|X|X|O|X|\n" +
+                                        "|X|X|X|O|X|O|\n" +
+                                        "|X|O|X|X|X|X|\n" +
+                                        "|O|X|O|O|O|O|\n" +
+                                        "|X|O|X|O|O|O|\n" +
+                                        "|X|X|O|X|O| |");
+
+        Tekoaly aly = new Tekoaly();
+        aly.teeSiirto(lauta);
+        assertFalse(lauta.loytyyViidenSuora(1));
+    }
 }

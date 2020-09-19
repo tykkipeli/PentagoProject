@@ -70,6 +70,7 @@ public class Tekoaly {
             }
         }
         lauta.teeSiirto(0, parassiirto);
+        lauta.tulostaLauta();
     }
 
     private int negaMax(boolean maximize, int alpha, int beta, int depth, int goalDepth) {
@@ -82,11 +83,13 @@ public class Tekoaly {
             return 0;
         }
         int player = maximize ? 0 : 1;
-        if (lauta.loytyyViidenSuora() && lauta.getVoittajaInt() != player) {
-            //int value = (player == 1 ? INF - depth : -INF + depth);
-            int value = (player == 1 ? INF : -INF);
-            tbls[goalDepth].put(lauta.kopio(), value);
-            return value;
+        if (lauta.loytyyViidenSuora(0)) {
+            tbls[goalDepth].put(lauta.kopio(), INF);
+            return INF;
+        }
+        if (lauta.loytyyViidenSuora(1)) {
+            tbls[goalDepth].put(lauta.kopio(), -INF);
+            return -INF;
         }
         if (lauta.onTaynna()) {
             tbls[goalDepth].put(lauta.kopio(), 0);
