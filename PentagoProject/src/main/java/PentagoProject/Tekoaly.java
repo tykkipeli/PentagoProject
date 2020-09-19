@@ -57,9 +57,19 @@ public class Tekoaly {
                 parassiirto = siirto;
             }
         }
-        lauta.teeSiirto(0, parassiirto);
         System.out.println("Laskurin arvo: " + laskuri);
-        System.out.println(tbls[iterations].get(lauta.kopio()));
+        System.out.println(best);
+        while (getArvo(parassiirto, iterations) == -INF && iterations > 1) {
+            iterations--;
+            best = -2*INF;
+            for (Siirto siirto : generoiSiirrot(0, iterations)) {
+                if (getArvo(siirto, iterations) > best) {
+                    best = getArvo(siirto, iterations);
+                    parassiirto = siirto;
+                }
+            }
+        }
+        lauta.teeSiirto(0, parassiirto);
     }
 
     private int negaMax(boolean maximize, int alpha, int beta, int depth, int goalDepth) {
