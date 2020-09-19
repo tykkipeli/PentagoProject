@@ -3,18 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PentagoProject;
+package PentagoProject.kayttoliittyma;
 
+import PentagoProject.logiikka.Lauta;
+import PentagoProject.logiikka.Tekoaly;
+import PentagoProject.pelikomponentit.Siirto;
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import static java.awt.BorderLayout.CENTER;
 import static java.awt.BorderLayout.EAST;
+import static java.awt.BorderLayout.NORTH;
+import static java.awt.BorderLayout.SOUTH;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -22,10 +28,13 @@ import java.awt.event.MouseListener;
 import java.awt.geom.Line2D;
 import java.util.Observable;
 import java.util.Observer;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 
 public class GUI extends JFrame{
@@ -46,20 +55,20 @@ public class GUI extends JFrame{
 
     private void initUI() {
 
-       
+       this.setResizable(false);
        
        JPanel ulkopaneeli = new JPanel();
        ulkopaneeli.setLayout(new BorderLayout());
        this.kentta = new MyPanel(lauta, tekoaly);
        kentta.setPreferredSize(new Dimension(800,800));
        
-       kentta.setBackground(Color.green);
+       //kentta.setBackground(Color.green);
        
        
        add(ulkopaneeli);
        
        JButton buttonPelaajaAloittaa = new JButton("Restart: Pelaaja aloittaa");
-       JButton buttonBottiAloittaa = new JButton("Restart: Botti aloittaa");
+       JButton buttonBottiAloittaa = new JButton("Restart: Botti aloittaa     ");
        
        buttonPelaajaAloittaa.addActionListener(new ActionListener(){  
         public void actionPerformed(ActionEvent e){  
@@ -100,10 +109,17 @@ public class GUI extends JFrame{
             }
         }  
         });
+
        
        JPanel nappipaneeli = new JPanel();
+       nappipaneeli.setLayout(new BoxLayout(nappipaneeli, BoxLayout.Y_AXIS));
+       nappipaneeli.setBorder(new EmptyBorder(new Insets(40, 60, 40, 60)));
+       
+       nappipaneeli.add(Box.createRigidArea(new Dimension(0, 50)));
        nappipaneeli.add(buttonPelaajaAloittaa);
+       nappipaneeli.add(Box.createRigidArea(new Dimension(0, 20)));
        nappipaneeli.add(buttonBottiAloittaa);
+       nappipaneeli.add(Box.createRigidArea(new Dimension(0, 50)));
        
        ulkopaneeli.add(kentta, CENTER);
        ulkopaneeli.add(nappipaneeli, EAST);
@@ -138,7 +154,7 @@ class MyPanel extends JPanel implements MouseListener{
     public MyPanel(Lauta lauta, Tekoaly tekoaly) {
         this.lauta = lauta;
         this.tekoaly = tekoaly;
-        setBackground(Color.green);
+        setBackground(new Color(30,144,255));
         addMouseListener(this);
     }
     
@@ -292,7 +308,7 @@ class MyPanel extends JPanel implements MouseListener{
     }
 
     @Override
-    public void mouseEntered(MouseEvent arg0) {
+    public void mouseEntered(MouseEvent e) {
     }
 
     @Override

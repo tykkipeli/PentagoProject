@@ -1,5 +1,6 @@
-package PentagoProject;
+package PentagoProject.logiikka;
 
+import PentagoProject.pelikomponentit.Siirto;
 import java.util.Arrays;
 
 public class Lauta {
@@ -198,7 +199,7 @@ public class Lauta {
         }
     }
 
-    boolean taysi() {
+    private boolean taysi() {
         return tayttoAste == SIZE * SIZE;
     }
 
@@ -216,7 +217,7 @@ public class Lauta {
         return false;
     }
 
-    void teeSiirto(int player, Siirto siirto) {
+    public void teeSiirto(int player, Siirto siirto) {
         this.teeSiirto(player, siirto.getX(), siirto.getY(), siirto.getKaanto());
     }
     

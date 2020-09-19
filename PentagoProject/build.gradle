@@ -4,7 +4,7 @@ apply plugin: 'application'
 apply plugin: 'checkstyle'
 
 
-mainClassName = 'PentagoProject.Pentago'
+mainClassName = 'PentagoProject.sovellus.Pentago'
 
 sourceSets.main.java.srcDirs = ['src/main/java']
 

@@ -1,7 +1,9 @@
-package PentagoProject;
+package PentagoProject.kayttoliittyma;
 
 //Tämä luokka on korvattu graafiella käyttöliittymällä
 
+import PentagoProject.logiikka.AI;
+import PentagoProject.logiikka.Lauta;
 import java.util.Scanner;
 
 public class Kayttoliittyma {

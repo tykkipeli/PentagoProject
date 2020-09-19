@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import PentagoProject.Lauta;
+import PentagoProject.logiikka.Lauta;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

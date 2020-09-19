@@ -1,6 +1,7 @@
 
-package PentagoProject;
+package PentagoProject.sovellus;
 
+import PentagoProject.kayttoliittyma.GUI;
 import java.awt.EventQueue;
 import java.util.Scanner;
 

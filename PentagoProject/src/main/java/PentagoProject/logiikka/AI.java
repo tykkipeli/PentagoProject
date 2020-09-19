@@ -1,8 +1,9 @@
-package PentagoProject;
+package PentagoProject.logiikka;
 
 // Tämä luokka on korvattu Tekoaly luokalla ja tätä luokkaa ei testata eikä käytetä missään!
 // Käytän luokkaa vain erilaisten juttujen testailuun
 
+import PentagoProject.pelikomponentit.Siirto;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -35,7 +36,7 @@ public class AI {
         this.lauta = lauta;
     }
 
-    void teeSiirto(Lauta lauta) {
+    public void teeSiirto(Lauta lauta) {
         this.lauta = lauta;
         for (int i = 0; i < MAXDEPTH; i++) {
             tbls[i].clear();
