@@ -9,5 +9,5 @@ Pentago on kahden hengen pelattava lautapeli. Pentagoa pelataan 6-kertaa-6-ruudu
 Omalla vuorollasi paina ensin jotain harmaata pistettä kentällä sijoittaaksesi oma kuulasi tähän ruutuun. Tämän jälkeen klikkaa jotain punaisista nuolista päättääkesi mitä neljännestä käännät mihin suuntaan. Tämän jälkeen on tietokoneen vuoro. Tietokone miettii korkeintaan 15 sekuntia, jonka jälkeen on taas sinun vuorosi. Jos haluat aloittaa pelin alusta, paina restart-nappia kentän oikealla puolella. Napit eivät kuitenkaan ole käytössä sillä aikaa kun tietokone miettii.
 
 [Viikkoraportti 1](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti1.md)  
-[Viikkoraportti 3](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti3.md)
-[Viikkoraportti 4](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti4.md)
+[Viikkoraportti 3](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti3.md)  
+[Viikkoraportti 4](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti4.md)  
