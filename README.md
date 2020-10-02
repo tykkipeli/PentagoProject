@@ -11,3 +11,4 @@ Omalla vuorollasi paina ensin jotain harmaata pistettä kentällä sijoittaakses
 [Viikkoraportti 1](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti1.md)  
 [Viikkoraportti 3](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti3.md)  
 [Viikkoraportti 4](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti4.md)  
+[Viikkoraportti 5](https://github.com/tykkipeli/PentagoProject/blob/master/Dokumentaatio/viikkoraportti5.md)  
